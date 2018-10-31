@@ -1,0 +1,20 @@
+[Unit]
+Description=hazelcastmc Management Center
+After=network.target
+
+[Service]
+Type=forking
+PermissionsStartOnly=true
+PIDFile=/run/hazelcastmc/hazelcastmc.pid
+User=<%= $::hazelcastmc::user %>
+Group=<%= $::hazelcastmc::group %>
+Type=simple
+WorkingDirectory=<%= $::hazelcastmc::install_dir %>
+ExecStartPre=/bin/mkdir -p /run/hazelcastmc
+ExecStartPre=/bin/chown -R <%= $::hazelcastmc::user %>.<%= $::hazelcastmc::group %> /run/hazelcastmc
+ExecStart=<%= $::hazelcastmc::java %> <%= $::hazelcastmc::java_options %> -jar <%= $::hazelcastmc::war_name %>-<%= $::hazelcastmc::version %>.war 8080 <%= $::hazelcastmc::context_path %>
+ExecStop=/bin/kill --signal TERM $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
