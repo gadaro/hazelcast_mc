@@ -1,5 +1,5 @@
 {
-  "name": "puppet-hazelcastmc",
+  "name": "gadaro-hazelcastmc",
   "version": "0.1.0",
   "author": "Gabriel Rodriguez",
   "summary": "This module installs the Hazelcast Management Center as a service",
