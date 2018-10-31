@@ -77,7 +77,7 @@ The module supports only **OS distributions** based on systemd:
 
 ## Development
 
-Fell free to comment or create any issue under https://gitlab.com/FonTech/homewifi/devops/puppet-hazelcastmc/issues
+Fell free to comment or create any issue under https://github.com/gadaro/puppet-hazelcastmc/issues
 
 ## Release Notes
 
