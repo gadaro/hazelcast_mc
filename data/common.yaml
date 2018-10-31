@@ -1,0 +1,12 @@
+hazelcastmc::version: '3.9.4'
+hazelcastmc::package_name: 'management-center'
+hazelcastmc::war_name: 'mancenter'
+hazelcastmc::context_path: 'mancenter'
+hazelcastmc::root_dir: '/opt'
+hazelcastmc::service_ensure: 'running'
+hazelcastmc::manage_user: true
+hazelcastmc::user: 'hazelcastmc'
+hazelcastmc::group: 'hazelcastmc'
+hazelcastmc::download_url: "https://download.hazelcast.com/management-center/%{lookup('hazelcastmc::package_name')}-%{lookup('hazelcastmc::version')}.tar.gz"
+hazelcastmc::java: '/usr/bin/java'
+hazelcastmc::java_options: "-Dhazelcast.mancenter.home=%{lookup('hazelcastmc::root_dir')}/%{lookup('hazelcastmc::package_name')}-%{lookup('hazelcastmc::version')}/web-cache/"
