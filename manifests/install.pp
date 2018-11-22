@@ -17,7 +17,7 @@ class hazelcastmc::install inherits hazelcastmc {
     ensure_resource('user', $::hazelcastmc::user, {
       ensure  => present,
       gid     => $::hazelcastmc::group,
-      require => Group[$::hazelcast::group],
+      require => Group[$::hazelcastmc::group],
     })
   }
 
